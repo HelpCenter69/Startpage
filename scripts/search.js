@@ -35,22 +35,24 @@ function isPrefixSearchEngine(value) {
 function parseSearch(q, middleClick = false) {
 	q = q.trim();
 	if (q === "") return;
+	const openInNewWindow = middleClick || window.startpageConfig.openInNewWindow;
+	const target = openInNewWindow ? "_blank" : "_self";
 
 	if (isURL(q)) {
 		// check if not http or https
 		if (!q.startsWith("http://") && !q.startsWith("https://")) q = "https://" + q;
-		window.open(q, middleClick ? "_blank" : "_self");
+		window.open(q, target);
 
 		return;
 	}
 
 	if (isPrefixSearchEngine(q)) {
 		let [searchEng, ...searchQuery] = q.split(" ");
-		window.open(searchEngMap[searchEng.split(":")[0]] + encodeURIComponent(searchQuery.join(" ")), middleClick ? "_blank" : "_self");
+		window.open(searchEngMap[searchEng.split(":")[0]] + encodeURIComponent(searchQuery.join(" ")), target);
 		return;
 	}
 
-	window.open(searchEngMap[window.startpageConfig.searchEngine] + encodeURIComponent(q), middleClick ? "_blank" : "_self");
+	window.open(searchEngMap[window.startpageConfig.searchEngine] + encodeURIComponent(q), target);
 }
 
 search.onkeyup = (e) => {

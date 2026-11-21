@@ -22,7 +22,9 @@ Extension that you can use to override the new tab page:
 
 # Customization
 
-Settings and bookmarks are shared through the site's deployed files, not saved in browser storage. To change the title, username, favicon, cover image, clock, search engine, bookmarks, or custom CSS, edit [`scripts/config.js`](scripts/config.js) in the repository and redeploy the site. Changes apply to everyone using that deployment. There is no per-user sign-in or in-page settings editor.
+Settings and bookmarks are shared through the site's deployed files, not saved in browser storage. To change the title, username, favicon, cover image, clock, search engine, bookmark/search link behavior, bookmarks, or custom CSS, edit [`scripts/config.js`](scripts/config.js) in the repository and redeploy the site. Changes apply to everyone using that deployment. There is no per-user sign-in or in-page settings editor.
+
+Set `openInNewWindow: true` in `scripts/config.js` to open left-clicked search results and bookmarks in a new window/tab. The default is `false`, which keeps them in the current window.
 
 ## Bookmarks
 

@@ -11,6 +11,7 @@ window.startpageConfig = {
 	showSeconds: true,
 	amPm: true,
 	searchEngine: "google",
+	openInNewWindow: false,
 	bookmarks: [
 		{
 			title: "Reddit",

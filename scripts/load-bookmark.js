@@ -25,6 +25,10 @@ function loadBookmark() {
 					const bookmarkLink = document.createElement("a");
 					bookmarkLink.href = link.value ? link.value : "#";
 					bookmarkLink.innerText = link.label ? link.label : "Invalid\nlink!";
+					if (window.startpageConfig.openInNewWindow) {
+						bookmarkLink.target = "_blank";
+						bookmarkLink.rel = "noopener";
+					}
 					bookmarkRows.appendChild(bookmarkLink);
 				});
 			} catch (error) {
