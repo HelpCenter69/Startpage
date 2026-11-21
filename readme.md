@@ -24,11 +24,11 @@ Extension that you can use to override the new tab page:
 
 # Customization
 
-This startpage is very customizable. You can change the search engine, window title, username, favicon, cover image, opacity, blur, bookmarks, page css, etc. background, the search engine, the links, and the colors.
+Settings and bookmarks are shared through the site's deployed files, not saved in browser storage. To change the title, username, favicon, cover image, clock, search engine, bookmarks, or custom CSS, edit [`scripts/config.js`](scripts/config.js) in the repository and redeploy the site. Changes apply to everyone using that deployment. There is no per-user sign-in or in-page settings editor.
 
 ## Bookmarks
 
-Bookmarks use json format. It's an array of objects that is formatted like this
+Bookmarks are configured as an array in `scripts/config.js`:
 
 ```
 [
@@ -46,7 +46,7 @@ Bookmarks use json format. It's an array of objects that is formatted like this
 
 ## User styles
 
-User styles are written in css. You can change the already provided :root variables. You can also override the classes that are already provided in the [css](style.css) files.
+User styles are written in CSS in the `userStyle` setting. You can change the provided `:root` variables or override the classes in [style.css](style.css).
 
 Default variables:
 

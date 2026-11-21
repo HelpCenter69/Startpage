@@ -19,15 +19,5 @@ function switchTo(page) {
 
 	// show the div
 	divDict[page].classList.remove("hidden");
-
-	localStorage.setItem("lastPage", page);
 }
 
-function initPageSwitcher() {
-	const lastPage = localStorage.getItem("lastPage");
-	if (lastPage) switchTo(lastPage);
-}
-
-// ------------------------------
-// init page switcher on load
-initPageSwitcher();

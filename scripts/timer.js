@@ -5,8 +5,7 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 const toExactSecond = 1000 - (new Date().getTime() % 1000);
 
 function setTime() {
-	const showSeconds = localStorage.getItem("showSeconds") == "true";
-	const amPm = localStorage.getItem("amPm") == "true";
+	const { showSeconds, amPm, showClockInImage, showClockInDate } = window.startpageConfig;
 	let today = new Date();
 
 	let H = String(today.getHours()).padStart(2, "0"),
@@ -26,7 +25,7 @@ function setTime() {
 		if (H == 0) H = 12;
 	}
 
-	if (localStorage.getItem("showClock-image") === "true") {
+	if (showClockInImage) {
 		if (showSeconds) HM = `<span class="color-primary">${H}</span><br/>${M}<br/><span class="color-secondary-dim">${S}</span><span class="ampm">${notation}</span>`;
 		else HM = `<span class="color-primary">${H}</span><br/>--<br/>${M}<span class="ampm">${notation}</span>`;
 
@@ -35,7 +34,7 @@ function setTime() {
 		timeDiv.innerHTML = "";
 	}
 
-	if (localStorage.getItem("showClock-date") === "true") {
+	if (showClockInDate) {
 		if (showSeconds) todayHeader.innerText += ` ${H}:${M}:${S} ${notation}`;
 		else todayHeader.innerText += ` ${H}:${M} ${notation}`;
 	}

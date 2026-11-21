@@ -50,7 +50,7 @@ function parseSearch(q, middleClick = false) {
 		return;
 	}
 
-	window.open(searchEngMap[localStorage.getItem("searchEngine")] + encodeURIComponent(q), middleClick ? "_blank" : "_self");
+	window.open(searchEngMap[window.startpageConfig.searchEngine] + encodeURIComponent(q), middleClick ? "_blank" : "_self");
 }
 
 search.onkeyup = (e) => {

@@ -1,22 +1,18 @@
 const bookmarksDiv = document.getElementById("bookmarks");
-const emptyMsg = `<div>No bookmarks found. <span class='link' onClick='switchTo("setting")'>Add some!</span></div>`;
+const emptyMsg = `<div>No bookmarks found.</div>`;
 const invalidMsg = `<div>Invalid syntax found in bookmarks. <span class='link' onClick='switchTo(\"setting\")'>Please check your input!</span></div>`;
 
 function loadBookmark() {
 	bookmarksDiv.innerHTML = "";
-	const bookmarks = localStorage.getItem("bookmarks-saved");
+	const bookmarks = window.startpageConfig.bookmarks;
 
-	if (bookmarks) {
-		if (!isJsonString(bookmarks)) bookmarksDiv.innerHTML = invalidMsg;
-
-		const bookmarksArray = JSON.parse(bookmarks);
-
-		if (bookmarksArray.length == 0) {
+	if (Array.isArray(bookmarks)) {
+		if (bookmarks.length == 0) {
 			bookmarksDiv.innerHTML = emptyMsg;
 			return;
 		}
 
-		bookmarksArray.forEach((bookmark) => {
+		bookmarks.forEach((bookmark) => {
 			const bookmarkRows = document.createElement("div");
 			bookmarkRows.className = "bookmarks-row";
 
@@ -37,9 +33,7 @@ function loadBookmark() {
 
 			bookmarksDiv.appendChild(bookmarkRows);
 		});
-	} else {
-		bookmarksDiv.innerHTML = emptyMsg;
-	}
+	} else bookmarksDiv.innerHTML = invalidMsg;
 }
 
 // ------------------------------
