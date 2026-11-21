@@ -1,6 +1,5 @@
 <p align="center">
     <img src="https://github.com/Dadangdut33/Startpage/blob/master/preview1.png?raw=true" alt="Preview">
-    <img src="https://github.com/Dadangdut33/Startpage/blob/master/preview2.png?raw=true" alt="Preview">
 </p>
 
 <h1 align="center">About</h1>
@@ -12,13 +11,12 @@ A simple customizable startpage for your browser. Some ideas and design are insp
 To use this as your homepage, you have to change the homepage and new tab in your browser settings. You can either:
 
 - Set path from local file
-- Use [the deployed link on github](https://dadangdut33.github.io/Startpage/).
 - Host it yourself on your own website or Fork this repository and deploy it on your github account (if you prefer it that way).
-- Host it locally by using a simple web server like [fenix](https://github.com/coreybutler/fenix/) (I recommend using the beta 3.0 version, it has auto startup and stuff)
+- Host it locally by using a simple web server like [Apache2](https://httpd.apache.org/)
 
 Extension that you can use to override the new tab page:
 
-- Firefox: [new tab override](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/) (I use this)
+- Firefox: [new tab override](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
 - Chromium: [Custom New Tab URL](https://chrome.google.com/webstore/detail/custom-new-tab-url/mmjbdbjnoablegbkcklggeknkfcjkjia?hl=en)
 - Edge: [Custom new tab](https://microsoftedge.microsoft.com/addons/detail/custom-new-tab/onagfgjlokaciajhjmajljcfanonbmia)
 
@@ -77,6 +75,7 @@ Default variables:
 - Base design and some ideas from [r/startpages](https://reddit.com/r/startpages) mainly [startpagev2 by aman333nolawz](https://github.com/aman333nolawz/startpage-v2)
 - url validator by [validator.js](https://github.com/validatorjs/validator.js)
 - [Scanlines animation by LernyWensi](https://github.com/LernyWensi/Endless)
+- hardcoded by [HelpCenter69](https://github.com/HelpCenter69/Startpage)
 
 Image sources:
 
